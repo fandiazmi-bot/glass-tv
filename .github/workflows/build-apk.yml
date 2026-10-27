@@ -1,25 +1,2557 @@
-name: Build APK
-on:
-  workflow_dispatch:
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
-      - uses: android-actions/setup-android@v3
-        with:
-          packages: platforms;android-34 build-tools;34.0.0
-      - uses: gradle/actions/setup-gradle@v4
-      - name: Build
-        working-directory: launcher
-        run: |
-          chmod +x gradlew
-          ./gradlew --no-daemon assembleRelease
-      - uses: actions/upload-artifact@v4
-        with:
-          name: glass-tv-apk
-          path: launcher/app/build/outputs/apk/release/app-release.apk
+[
+  {
+    "name": "Gathin23/cleanyourtv",
+    "url": "https://github.com/Gathin23/cleanyourtv",
+    "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+    "stars": 25304,
+    "forks": 2788,
+    "language": "Java",
+    "topics": [
+      "adb",
+      "adblock",
+      "android-tv",
+      "android-tv-launcher",
+      "apple-tv",
+      "bloatware-removal",
+      "claude-code",
+      "debloat",
+      "fire-tv",
+      "google-tv",
+      "launcher",
+      "privacy",
+      "smart-tv",
+      "sony-bravia",
+      "tcl",
+      "vibe-coding",
+      "xiaomi"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-17T08:12:35Z",
+    "updated_at": "2026-10-23T06:48:14Z",
+    "owner": {
+      "name": "Gathin23",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94786511?v=4"
+    }
+  },
+  {
+    "name": "simbasjungles/free-my-tv",
+    "url": "https://github.com/simbasjungles/free-my-tv",
+    "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
+    "stars": 4360,
+    "forks": 714,
+    "language": "Java",
+    "topics": [
+      "android-tv",
+      "claude-code",
+      "google-tv",
+      "home-screen",
+      "launcher",
+      "no-ads",
+      "open-source",
+      "samsung-tizen",
+      "tizen",
+      "tmdb",
+      "webos"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-19T19:29:01Z",
+    "updated_at": "2026-10-25T07:04:49Z",
+    "owner": {
+      "name": "simbasjungles",
+      "avatar_url": "https://avatars.githubusercontent.com/u/192837953?v=4"
+    }
+  },
+  {
+    "name": "Gathin23/tv-vibehack",
+    "url": "https://github.com/Gathin23/tv-vibehack",
+    "description": "Your TV, minus the ads. Debloat any Android TV or Google TV over Wi-Fi and swap the ad-filled home screen for a clean Apple TV-style launcher. No root, fully reversible.",
+    "stars": 2691,
+    "forks": 323,
+    "language": "Java",
+    "topics": [
+      "ad-free",
+      "adb",
+      "android-tv",
+      "android-tv-launcher",
+      "bloatware-removal",
+      "claude-code",
+      "debloat",
+      "google-tv",
+      "hisense",
+      "home-screen",
+      "launcher",
+      "nvidia-shield",
+      "open-source",
+      "smart-tv",
+      "sony-bravia",
+      "tcl",
+      "xiaomi"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-17T08:12:35Z",
+    "updated_at": "2026-10-19T07:10:41Z",
+    "owner": {
+      "name": "Gathin23",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94786511?v=4"
+    }
+  },
+  {
+    "name": "humblemuzzu/dumbtv",
+    "url": "https://github.com/humblemuzzu/dumbtv",
+    "description": "Take the ads, tracking and clutter out of your Fire TV over ADB, no root. Every step can be undone. Comes with its own open-source home screen.",
+    "stars": 1409,
+    "forks": 126,
+    "language": "Java",
+    "topics": [
+      "ad-blocking",
+      "adb",
+      "android-tv",
+      "debloat",
+      "dns-filter",
+      "fire-os",
+      "fire-tv",
+      "firetv",
+      "launcher",
+      "privacy",
+      "smart-tv",
+      "telemetry"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-18T17:04:12Z",
+    "updated_at": "2026-10-24T06:35:21Z",
+    "owner": {
+      "name": "humblemuzzu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/107297384?v=4"
+    }
+  },
+  {
+    "name": "Ansub/tv-detox",
+    "url": "https://github.com/Ansub/tv-detox",
+    "description": "Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
+    "stars": 1398,
+    "forks": 143,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-18T06:42:29Z",
+    "updated_at": "2026-10-24T06:17:11Z",
+    "owner": {
+      "name": "Ansub",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12985873?v=4"
+    }
+  },
+  {
+    "name": "LordixDemon/apple_watch_connector",
+    "url": "https://github.com/LordixDemon/apple_watch_connector",
+    "description": null,
+    "stars": 491,
+    "forks": 45,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-09T06:58:06Z",
+    "updated_at": "2026-10-15T06:43:57Z",
+    "owner": {
+      "name": "LordixDemon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37721182?v=4"
+    }
+  },
+  {
+    "name": "mihirgupta0900/tv-home",
+    "url": "https://github.com/mihirgupta0900/tv-home",
+    "description": "Debloat a slow, ad-filled Android TV over Wi-Fi and give it a fast Apple TV-style home screen. One prompt for Claude Code, or do it by hand.",
+    "stars": 429,
+    "forks": 61,
+    "language": "Java",
+    "topics": [
+      "adb",
+      "android-tv",
+      "claude-code",
+      "debloat",
+      "google-tv",
+      "launcher"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-18T20:12:18Z",
+    "updated_at": "2026-10-24T06:12:24Z",
+    "owner": {
+      "name": "mihirgupta0900",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37367148?v=4"
+    }
+  },
+  {
+    "name": "opentrap/opentrap",
+    "url": "https://github.com/opentrap/opentrap",
+    "description": "A free, open-source alternative to Burp Suite: an intercepting proxy and web app security testing suite with Repeater, Intruder, Collaborator and a built-in OWASP ZAP scanner. Linux, AGPL-3.0.",
+    "stars": 416,
+    "forks": 6,
+    "language": "Java",
+    "topics": [
+      "application-security",
+      "appsec",
+      "bug-bounty",
+      "burp-alternative",
+      "burp-suite",
+      "dast",
+      "http-proxy",
+      "infosec",
+      "intercepting-proxy",
+      "java",
+      "owasp",
+      "owasp-zap",
+      "penetration-testing",
+      "pentesting",
+      "security",
+      "security-tools",
+      "vulnerability-scanner",
+      "web-application-security",
+      "web-security"
+    ],
+    "license": "GNU Affero General Public License v3.0",
+    "created_at": "2026-10-19T03:29:08Z",
+    "updated_at": "2026-10-25T07:09:01Z",
+    "owner": {
+      "name": "opentrap",
+      "avatar_url": "https://avatars.githubusercontent.com/u/344606698?v=4"
+    }
+  },
+  {
+    "name": "ToomRamcharan/tv-vibehack",
+    "url": "https://github.com/ToomRamcharan/tv-vibehack",
+    "description": "Reverse-engineer any Android TV / Google TV: 100% fail-safe direct boot launcher, remote hotkey remapping, Realtek hardware passthrough & offline media player.",
+    "stars": 304,
+    "forks": 27,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-19T11:29:37Z",
+    "updated_at": "2026-10-25T03:25:04Z",
+    "owner": {
+      "name": "ToomRamcharan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/215864182?v=4"
+    }
+  },
+  {
+    "name": "xMazaki/unbloat-android-tv",
+    "url": "https://github.com/xMazaki/unbloat-android-tv",
+    "description": "Slim down any Android TV (ads, telemetry) + minimalist Apple TV-style home screen. Reversible, one double-click. 🇫🇷 Allégez n'importe quelle TV Android (pubs, télémétrie) + écran d'accueil minimaliste façon Apple TV. Réversible, en un double-clic.",
+    "stars": 263,
+    "forks": 21,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-24T07:16:39Z",
+    "updated_at": "2026-10-27T03:46:34Z",
+    "owner": {
+      "name": "xMazaki",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108530688?v=4"
+    }
+  },
+  {
+    "name": "op7418/guizang-tv",
+    "url": "https://github.com/op7418/guizang-tv",
+    "description": "归藏电视：适配国内小米电视的简洁 Android 桌面，大字列表、壁纸轮播与 HDMI 直达。",
+    "stars": 250,
+    "forks": 35,
+    "language": "Java",
+    "topics": [
+      "android-tv",
+      "java",
+      "launcher",
+      "wallpaper",
+      "xiaomi"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-20T15:00:29Z",
+    "updated_at": "2026-10-26T05:49:13Z",
+    "owner": {
+      "name": "op7418",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+    }
+  },
+  {
+    "name": "mclhm8182/tvhome-zh",
+    "url": "https://github.com/mclhm8182/tvhome-zh",
+    "description": "Apple TV-style launcher for Android TV — ready-to-install APK, no build needed. Apple TV 风格的 Android TV 桌面 —— 装完即用，无需编译。Based on Gathin23/tv-vibehack (CleanYourTV).",
+    "stars": 217,
+    "forks": 16,
+    "language": "Java",
+    "topics": [
+      "adb",
+      "android-tv",
+      "android-tv-launcher",
+      "bloatware-removal",
+      "chinese",
+      "debloat",
+      "google-tv",
+      "home-screen",
+      "launcher",
+      "simplified-chinese",
+      "tv-launcher",
+      "tvhome"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-19T05:36:33Z",
+    "updated_at": "2026-10-25T03:11:34Z",
+    "owner": {
+      "name": "mclhm8182",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60735688?v=4"
+    }
+  },
+  {
+    "name": "piermark/omarchytv",
+    "url": "https://github.com/piermark/omarchytv",
+    "description": "Omarchy-styled tiling launcher ecosystem for Android TV, Google TV, LG webOS, Android Mobile & Linux/macOS/Omarchy PCs",
+    "stars": 194,
+    "forks": 15,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-26T08:48:20Z",
+    "updated_at": "2026-10-27T07:06:19Z",
+    "owner": {
+      "name": "piermark",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17280140?v=4"
+    }
+  },
+  {
+    "name": "kulwantnagi/android-tv-makeover",
+    "url": "https://github.com/kulwantnagi/android-tv-makeover",
+    "description": "Debloat an Android TV, replace its home screen with a clean Apple TV style launcher, and add a fast Indian live TV app. Reversible, over Wi-Fi ADB.",
+    "stars": 167,
+    "forks": 36,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-19T04:48:07Z",
+    "updated_at": "2026-10-24T15:42:40Z",
+    "owner": {
+      "name": "kulwantnagi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3816435?v=4"
+    }
+  },
+  {
+    "name": "tshi-dev/UrTV",
+    "url": "https://github.com/tshi-dev/UrTV",
+    "description": "Arabic home screen and Saudi screensaver for Android TV / Google TV, plus a safe speed-up. Your AI agent sets it all up. واجهة عربية وشاشة توقف سعودية لتلفزيونات أندرويد، يركّبها لك مساعد الذكاء الاصطناعي.",
+    "stars": 164,
+    "forks": 63,
+    "language": "Java",
+    "topics": [
+      "ai-agents",
+      "android-tv",
+      "arabic",
+      "debloat",
+      "google-tv",
+      "launcher",
+      "saudi-arabia",
+      "screensaver"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-19T08:00:59Z",
+    "updated_at": "2026-10-25T07:05:24Z",
+    "owner": {
+      "name": "tshi-dev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/272740088?v=4"
+    }
+  },
+  {
+    "name": "JackWang666666/my-rag",
+    "url": "https://github.com/JackWang666666/my-rag",
+    "description": "我的rag系统，可以用于导入知识库进行知识问答，可集成第三方mcp，也做了权限隔离等",
+    "stars": 140,
+    "forks": 7,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-18T06:42:31Z",
+    "updated_at": "2026-10-24T04:26:44Z",
+    "owner": {
+      "name": "JackWang666666",
+      "avatar_url": "https://avatars.githubusercontent.com/u/212583151?v=4"
+    }
+  },
+  {
+    "name": "cocombee/glass-tv",
+    "url": "https://github.com/cocombee/glass-tv",
+    "description": "Make your Android TV or Google TV fast and ad-free again: debloat it over Wi-Fi, then come home to a glass home screen with a new place to visit every week.",
+    "stars": 130,
+    "forks": 160,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-20T03:00:24Z",
+    "updated_at": "2026-10-26T04:03:11Z",
+    "owner": {
+      "name": "cocombee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20119744?v=4"
+    }
+  },
+  {
+    "name": "MauroProto/wii-tv",
+    "url": "https://github.com/MauroProto/wii-tv",
+    "description": null,
+    "stars": 122,
+    "forks": 12,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-21T04:46:26Z",
+    "updated_at": "2026-10-26T15:58:32Z",
+    "owner": {
+      "name": "MauroProto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56734993?v=4"
+    }
+  },
+  {
+    "name": "kernelpanic0x11/instagram-api-workbench",
+    "url": "https://github.com/kernelpanic0x11/instagram-api-workbench",
+    "description": "Instagram Android API evidence, OpenAPI catalog, and local JavaScript Swagger workbench",
+    "stars": 116,
+    "forks": 31,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-17T00:50:31Z",
+    "updated_at": "2026-10-19T23:36:25Z",
+    "owner": {
+      "name": "kernelpanic0x11",
+      "avatar_url": "https://avatars.githubusercontent.com/u/328764218?v=4"
+    }
+  },
+  {
+    "name": "0xProbabillity/luma-tv",
+    "url": "https://github.com/0xProbabillity/luma-tv",
+    "description": "A calm, tvOS-inspired home screen for Android TV and Google TV. No ads, no tracking.",
+    "stars": 105,
+    "forks": 11,
+    "language": "Java",
+    "topics": [
+      "android",
+      "android-tv",
+      "google-tv",
+      "home-screen",
+      "java",
+      "launcher",
+      "smart-home",
+      "tvos"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-19T12:22:31Z",
+    "updated_at": "2026-10-25T04:07:37Z",
+    "owner": {
+      "name": "0xProbabillity",
+      "avatar_url": "https://avatars.githubusercontent.com/u/342495785?v=4"
+    }
+  },
+  {
+    "name": "jhontandazo008/CleanLauncher",
+    "url": "https://github.com/jhontandazo008/CleanLauncher",
+    "description": "Launcher a medida para radio Android NWD (Allwinner T3)",
+    "stars": 94,
+    "forks": 29,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-24T20:50:05Z",
+    "updated_at": "2026-10-27T03:14:02Z",
+    "owner": {
+      "name": "jhontandazo008",
+      "avatar_url": "https://avatars.githubusercontent.com/u/291095724?v=4"
+    }
+  },
+  {
+    "name": "Teddy563/realworldmc",
+    "url": "https://github.com/Teddy563/realworldmc",
+    "description": "Explore real cities, mountains and streets in Minecraft. RealWorldMC brings Google 3D maps and Street View to Java Edition with Fabric. Recommended for 1.21.1; experimental 26.2 available. Requires your own map API keys. ",
+    "stars": 82,
+    "forks": 9,
+    "language": "Java",
+    "topics": [
+      "3d-tiles",
+      "cesium",
+      "fabric",
+      "fabric-mod",
+      "google-earth",
+      "google-maps",
+      "minecraft",
+      "minecraft-java",
+      "minecraft-mod",
+      "modrinth",
+      "real-world",
+      "street-view"
+    ],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-09T20:51:37Z",
+    "updated_at": "2026-10-15T06:16:25Z",
+    "owner": {
+      "name": "Teddy563",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19164688?v=4"
+    }
+  },
+  {
+    "name": "VictorTran1023/android-tv-toolkit",
+    "url": "https://github.com/VictorTran1023/android-tv-toolkit",
+    "description": "品牌无关的 Android TV 调试与调优工具箱：ADB 授权、分品牌侧载、去广告、状态 HUD、回归测试 | Brand-agnostic Android TV toolkit: ADB auth, per-brand sideloading, debloat, status HUD, regression tests",
+    "stars": 81,
+    "forks": 9,
+    "language": "Java",
+    "topics": [
+      "adb",
+      "android-tv",
+      "android-tv-toolkit",
+      "debloat",
+      "flclash",
+      "handbook",
+      "hud",
+      "overlay",
+      "smarttube",
+      "sony",
+      "tcl",
+      "tutorial",
+      "xiaomi"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-19T02:53:28Z",
+    "updated_at": "2026-10-24T17:28:59Z",
+    "owner": {
+      "name": "VictorTran1023",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10486415?v=4"
+    }
+  },
+  {
+    "name": "anITer/utv",
+    "url": "https://github.com/anITer/utv",
+    "description": "Android iptv player for China Uniom",
+    "stars": 79,
+    "forks": 22,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-19T02:33:10Z",
+    "updated_at": "2026-10-24T15:13:36Z",
+    "owner": {
+      "name": "anITer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11835444?v=4"
+    }
+  },
+  {
+    "name": "jichun29/glasstv",
+    "url": "https://github.com/jichun29/glasstv",
+    "description": "GlassTV · 玻璃桌面：给电视一块干净的玻璃桌面。开源 Android TV 桌面，无广告无推荐，壁纸 + 翻页时钟屏保 + 六宫格控制中心，通用版 / 4.4 精简版双包。",
+    "stars": 77,
+    "forks": 7,
+    "language": "Java",
+    "topics": [
+      "ad-free",
+      "android",
+      "android-tv",
+      "flip-clock",
+      "java",
+      "launcher",
+      "mitv",
+      "screensaver",
+      "tv-desktop",
+      "tv-launcher"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-20T04:38:07Z",
+    "updated_at": "2026-10-26T01:02:15Z",
+    "owner": {
+      "name": "jichun29",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64247113?v=4"
+    }
+  },
+  {
+    "name": "VictorTran1023/tcl-tv-adb-proxy",
+    "url": "https://github.com/VictorTran1023/tcl-tv-adb-proxy",
+    "description": "TCL 电视调试与优化手册：ADB 授权 · 侧载 · 代理 · 去广告 · 低负载 · HUD · 回归测试",
+    "stars": 77,
+    "forks": 9,
+    "language": "Java",
+    "topics": [
+      "adb",
+      "android-tv",
+      "debloat",
+      "flclash",
+      "smarttube",
+      "tcl",
+      "tutorial"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-19T02:53:28Z",
+    "updated_at": "2026-10-21T02:43:28Z",
+    "owner": {
+      "name": "VictorTran1023",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10486415?v=4"
+    }
+  },
+  {
+    "name": "GaelQuinta/minecraft-metal-shaders",
+    "url": "https://github.com/GaelQuinta/minecraft-metal-shaders",
+    "description": "Native Metal shaders for Minecraft Java on Apple Silicon Macs: shadows, volumetric clouds, god rays, reflective water, HDR. A fork of mcopt.",
+    "stars": 77,
+    "forks": 2,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-12T02:38:33Z",
+    "updated_at": "2026-10-17T22:13:13Z",
+    "owner": {
+      "name": "GaelQuinta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89002325?v=4"
+    }
+  },
+  {
+    "name": "AstralAirAnchorage78/Resp-Minecraft-AIO-Soft",
+    "url": "https://github.com/AstralAirAnchorage78/Resp-Minecraft-AIO-Soft",
+    "description": "Free/Best Software for Minecraft Yet",
+    "stars": 74,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "anti-hack",
+      "bedrock-client",
+      "dupe",
+      "killaura",
+      "liquidbounce",
+      "lunar-client",
+      "mclauncher",
+      "meteor-client-addons",
+      "meteorclient",
+      "minecraf-mod",
+      "minecraft-guides",
+      "minecraft-verity",
+      "nbt-hacks",
+      "obsidian-client",
+      "rusherhack",
+      "vape",
+      "vape-client",
+      "vape-launcher",
+      "vapelite",
+      "vaping"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-18T05:13:17Z",
+    "updated_at": "2026-10-20T15:15:58Z",
+    "owner": {
+      "name": "AstralAirAnchorage78",
+      "avatar_url": "https://avatars.githubusercontent.com/u/338007834?v=4"
+    }
+  },
+  {
+    "name": "RadiusAxolotlChimney/Resp-Minecraft-AIO-Soft",
+    "url": "https://github.com/RadiusAxolotlChimney/Resp-Minecraft-AIO-Soft",
+    "description": "Free/Best Software for Minecraft Yet",
+    "stars": 74,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "anti-hack",
+      "bedrock-client",
+      "dupe",
+      "killaura",
+      "liquidbounce",
+      "lunar-client",
+      "mclauncher",
+      "meteor-client-addons",
+      "meteorclient",
+      "minecraf-mod",
+      "minecraft-guides",
+      "minecraft-verity",
+      "nbt-hacks",
+      "obsidian-client",
+      "rusherhack",
+      "vape",
+      "vape-client",
+      "vape-launcher",
+      "vapelite",
+      "vaping"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-18T09:32:03Z",
+    "updated_at": "2026-10-20T15:14:51Z",
+    "owner": {
+      "name": "RadiusAxolotlChimney",
+      "avatar_url": "https://avatars.githubusercontent.com/u/338019785?v=4"
+    }
+  },
+  {
+    "name": "jichun29/cleanyourtv-k",
+    "url": "https://github.com/jichun29/cleanyourtv-k",
+    "description": "CleanYourTV 中文定制版电视桌面：基于 Gathin23/cleanyourtv 二改，融合 quiet-tv 壁纸模块（内置风景壁纸+轮播）、遥控器菜单键玻璃弹窗、小米国行适配、国产 App 全量发现",
+    "stars": 71,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-20T04:38:07Z",
+    "updated_at": "2026-10-25T07:03:11Z",
+    "owner": {
+      "name": "jichun29",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64247113?v=4"
+    }
+  },
+  {
+    "name": "BeatsAD/quiet-tv",
+    "url": "https://github.com/BeatsAD/quiet-tv",
+    "description": "面向国内电视机的适配与应用升级改造：轻量 Android 电视桌面、应用配置、可恢复精简与机型验证。基于 Gathin23/tv-vibehack。",
+    "stars": 70,
+    "forks": 6,
+    "language": "Java",
+    "topics": [
+      "adb",
+      "android-tv",
+      "chinese",
+      "google-tv",
+      "launcher",
+      "sony",
+      "tv-customization"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-18T03:28:14Z",
+    "updated_at": "2026-10-24T06:02:32Z",
+    "owner": {
+      "name": "BeatsAD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31951556?v=4"
+    }
+  },
+  {
+    "name": "vishalsingh2972/Claude-TV",
+    "url": "https://github.com/vishalsingh2972/Claude-TV",
+    "description": "Remove annoying TV ads using Claude. A lightweight, ad-free home screen for Android TV & Google TV, with reversible ADB debloating.",
+    "stars": 67,
+    "forks": 11,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-18T14:15:21Z",
+    "updated_at": "2026-10-22T13:12:08Z",
+    "owner": {
+      "name": "vishalsingh2972",
+      "avatar_url": "https://avatars.githubusercontent.com/u/106817047?v=4"
+    }
+  },
+  {
+    "name": "Lotuszn/piggyhand-fish",
+    "url": "https://github.com/Lotuszn/piggyhand-fish",
+    "description": null,
+    "stars": 66,
+    "forks": 6,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU Affero General Public License v3.0",
+    "created_at": "2026-10-15T22:29:12Z",
+    "updated_at": "2026-10-21T05:24:31Z",
+    "owner": {
+      "name": "Lotuszn",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100762296?v=4"
+    }
+  },
+  {
+    "name": "wlmosv-png/wpaforge",
+    "url": "https://github.com/wlmosv-png/wpaforge",
+    "description": "Android WPA 密码破解工具 —— 按 SSID 现场派生候选、智能排序、断点续跑、后台队列，附局域网设备侦察与判断依据追溯。纯 Root，Apache-2.0。",
+    "stars": 59,
+    "forks": 2,
+    "language": "Java",
+    "topics": [
+      "android",
+      "open-source",
+      "password-cracker",
+      "pentest",
+      "security-audit",
+      "wifi",
+      "wpa",
+      "xposed-alternative"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-10T15:27:32Z",
+    "updated_at": "2026-10-15T13:51:56Z",
+    "owner": {
+      "name": "wlmosv-png",
+      "avatar_url": "https://avatars.githubusercontent.com/u/262102622?v=4"
+    }
+  },
+  {
+    "name": "Ciss31/kist-finance",
+    "url": "https://github.com/Ciss31/kist-finance",
+    "description": "Kist Finance: Local-first personal finance hub with built-in private AI",
+    "stars": 58,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "allocation-strategies",
+      "budgeting",
+      "carrer-guidance",
+      "cashflow-analysis",
+      "currency",
+      "finance",
+      "fire",
+      "flask",
+      "forecasting",
+      "loans-analysis",
+      "local-first",
+      "market-intelligence",
+      "personal-finance",
+      "privacy-first",
+      "self-hosted",
+      "self-hosted-ai",
+      "sqllite",
+      "trading-strategy-simulation"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-23T19:33:58Z",
+    "updated_at": "2026-10-27T01:13:21Z",
+    "owner": {
+      "name": "Ciss31",
+      "avatar_url": "https://avatars.githubusercontent.com/u/120720878?v=4"
+    }
+  },
+  {
+    "name": "AbdulSamad350z/openide",
+    "url": "https://github.com/AbdulSamad350z/openide",
+    "description": "OpenIDE: Material Design 3 IDE with Monaco and Live Preview",
+    "stars": 58,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "code-editor",
+      "costomizable",
+      "developer-tools",
+      "electron",
+      "ide",
+      "javascript",
+      "material-design",
+      "material-design-3",
+      "material-you",
+      "monoco-editor",
+      "open-source",
+      "plugin-system",
+      "text-editor",
+      "theme-engine",
+      "windows",
+      "windows-11",
+      "windows-app",
+      "windows-desktop"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-22T20:59:33Z",
+    "updated_at": "2026-10-27T05:54:27Z",
+    "owner": {
+      "name": "AbdulSamad350z",
+      "avatar_url": "https://avatars.githubusercontent.com/u/203698455?v=4"
+    }
+  },
+  {
+    "name": "EzHAfana/netspeedtray",
+    "url": "https://github.com/EzHAfana/netspeedtray",
+    "description": "NetSpeedTray: Lightweight Open-Source Network Monitor for Windows Taskbar",
+    "stars": 58,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "bandwidth-monitor",
+      "freeware",
+      "netspeed",
+      "netspeed-monitor",
+      "network-monitor",
+      "network-monitoring",
+      "system-tray",
+      "taskbar",
+      "taskbar-application",
+      "taskbar-enhancement",
+      "taskbar-modification",
+      "taskbar-tools",
+      "utility",
+      "widget",
+      "windows",
+      "windows-11"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-22T20:59:28Z",
+    "updated_at": "2026-10-27T06:54:49Z",
+    "owner": {
+      "name": "EzHAfana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108681273?v=4"
+    }
+  },
+  {
+    "name": "sulthoni122/aion-combat-analyzer",
+    "url": "https://github.com/sulthoni122/aion-combat-analyzer",
+    "description": "Aion-DPS-Meter: Real-Time Combat Analytics, Overlays & Boss Leaderboards",
+    "stars": 58,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "aion",
+      "aion-2",
+      "aion2",
+      "aion2-tools",
+      "boss-timers",
+      "combat-log",
+      "combat-tracker",
+      "csharp",
+      "damage-meter",
+      "dotnet",
+      "dps-meter",
+      "game-overlay",
+      "game-tools",
+      "mmorpg",
+      "npcap",
+      "overlay",
+      "packet-capture",
+      "toolkit",
+      "twitch-drops",
+      "wpf"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-24T09:52:33Z",
+    "updated_at": "2026-10-27T05:53:22Z",
+    "owner": {
+      "name": "sulthoni122",
+      "avatar_url": "https://avatars.githubusercontent.com/u/191582381?v=4"
+    }
+  },
+  {
+    "name": "Ikramullah-2011/daeva-lens",
+    "url": "https://github.com/Ikramullah-2011/daeva-lens",
+    "description": "Daeva-Lens: Visual DPS and Healing Meter with Combat Overlay and Boss Break Gauge",
+    "stars": 58,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "aion",
+      "aion-2",
+      "aion-2-dps-meter",
+      "aion2",
+      "aion2-dps-meter",
+      "combat-log",
+      "daeva-meter",
+      "damage-meter",
+      "dps-meter",
+      "electron",
+      "mmo",
+      "npcap",
+      "overlay",
+      "overlays",
+      "windows"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-24T09:35:20Z",
+    "updated_at": "2026-10-27T06:57:28Z",
+    "owner": {
+      "name": "Ikramullah-2011",
+      "avatar_url": "https://avatars.githubusercontent.com/u/303984930?v=4"
+    }
+  },
+  {
+    "name": "PandaBung/aion-2-beta-program-tools",
+    "url": "https://github.com/PandaBung/aion-2-beta-program-tools",
+    "description": "AION 2 Beta Program 2026: Playtest the Next Era of Atreia and Shape Its Future",
+    "stars": 58,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "aion",
+      "aion-2",
+      "beta-testing",
+      "dungeons",
+      "faction-war",
+      "fantasy",
+      "flight",
+      "free-game-key",
+      "game-community",
+      "mmorpg",
+      "nc",
+      "open-world",
+      "pve",
+      "pvp"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-24T09:35:16Z",
+    "updated_at": "2026-10-27T01:13:51Z",
+    "owner": {
+      "name": "PandaBung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/162973068?v=4"
+    }
+  },
+  {
+    "name": "reveny/Android-Compatibility-Layer",
+    "url": "https://github.com/reveny/Android-Compatibility-Layer",
+    "description": "A translation layer for Android on Linux. Run Android Apps and Games on Linux",
+    "stars": 54,
+    "forks": 8,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-20T18:03:10Z",
+    "updated_at": "2026-10-26T06:34:04Z",
+    "owner": {
+      "name": "reveny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/113244907?v=4"
+    }
+  },
+  {
+    "name": "JeensLab/AI-Companion",
+    "url": "https://github.com/JeensLab/AI-Companion",
+    "description": "Олег — ИИ-компаньон для Minecraft 1.21.1 и NeoForge. Общение, голос, добыча, крафт и совместное выживание.",
+    "stars": 53,
+    "forks": 7,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-26T16:04:27Z",
+    "updated_at": "2026-10-27T07:03:34Z",
+    "owner": {
+      "name": "JeensLab",
+      "avatar_url": "https://avatars.githubusercontent.com/u/348394450?v=4"
+    }
+  },
+  {
+    "name": "TanookiStudios/SuperMarioAllStarsRecomp",
+    "url": "https://github.com/TanookiStudios/SuperMarioAllStarsRecomp",
+    "description": "Super Mario All-Stars (SNES), native for Mac, Windows and Linux. Bring your own ROM.",
+    "stars": 52,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-20T20:20:45Z",
+    "updated_at": "2026-10-26T02:14:06Z",
+    "owner": {
+      "name": "TanookiStudios",
+      "avatar_url": "https://avatars.githubusercontent.com/u/337555733?v=4"
+    }
+  },
+  {
+    "name": "SunkenInTime/diorama",
+    "url": "https://github.com/SunkenInTime/diorama",
+    "description": "Diorama: a Minecraft minimap and world map drawn at an angle, like a model on a table. Fabric, client-side.",
+    "stars": 51,
+    "forks": 3,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-13T02:48:32Z",
+    "updated_at": "2026-10-19T05:54:25Z",
+    "owner": {
+      "name": "SunkenInTime",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76637177?v=4"
+    }
+  },
+  {
+    "name": "leiz56638111-create/puppy-store-cast",
+    "url": "https://github.com/leiz56638111-create/puppy-store-cast",
+    "description": "小狗便利店投屏：轻量 Android TV DLNA 视频接收端，基于 Media3，采用 GPL-3.0-only。",
+    "stars": 47,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-19T14:58:45Z",
+    "updated_at": "2026-10-23T16:00:32Z",
+    "owner": {
+      "name": "leiz56638111-create",
+      "avatar_url": "https://avatars.githubusercontent.com/u/264647022?v=4"
+    }
+  },
+  {
+    "name": "egyjs/afnon-android-tv-launcher",
+    "url": "https://github.com/egyjs/afnon-android-tv-launcher",
+    "description": "Afnon (أفنون): Android TV launcher and home screen for Muslims. Offline prayer times (74 cities), Qibla, adhan/azan, prayer reminders, Ramadan and Friday modes, 16 Quran radio stations and reciters. Arabic and English, for Google TV and TCL.",
+    "stars": 46,
+    "forks": 15,
+    "language": "Java",
+    "topics": [
+      "adhan",
+      "android-tv",
+      "android-tv-launcher",
+      "arabic",
+      "azan",
+      "google-tv",
+      "islam",
+      "islamic",
+      "java",
+      "launcher",
+      "muslim",
+      "prayer-times",
+      "qibla",
+      "quran",
+      "quran-radio",
+      "ramadan",
+      "rtl",
+      "salah",
+      "tcl",
+      "tv-launcher"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-21T00:28:02Z",
+    "updated_at": "2026-10-26T19:32:31Z",
+    "owner": {
+      "name": "egyjs",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12745270?v=4"
+    }
+  },
+  {
+    "name": "coldMEW/Hush",
+    "url": "https://github.com/coldMEW/Hush",
+    "description": "Ad-free listening for Spotify on Android: skips ad breaks without root or a modified Spotify app.",
+    "stars": 45,
+    "forks": 3,
+    "language": "Java",
+    "topics": [
+      "adblock",
+      "android",
+      "dns",
+      "open-source",
+      "shizuku",
+      "spotify"
+    ],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-23T21:42:20Z",
+    "updated_at": "2026-10-27T06:21:43Z",
+    "owner": {
+      "name": "coldMEW",
+      "avatar_url": "https://avatars.githubusercontent.com/u/250605954?v=4"
+    }
+  },
+  {
+    "name": "dyascj/FireFrame",
+    "url": "https://github.com/dyascj/FireFrame",
+    "description": "A clean, ad-free home screen for the Amazon Fire TV Stick. No root. Custom launcher with a glass app dock, plus one command that removes Fire TV ads, tracking and bloatware over adb. Works with Claude Code.",
+    "stars": 44,
+    "forks": 3,
+    "language": "Java",
+    "topics": [
+      "ad-free",
+      "adb",
+      "amazon-fire-tv",
+      "android-tv",
+      "apple-tv",
+      "bloatware-removal",
+      "claude-code",
+      "custom-launcher",
+      "debloat",
+      "fire-os",
+      "fire-tv",
+      "fire-tv-stick",
+      "firestick",
+      "firetv",
+      "home-screen",
+      "launcher",
+      "minimalist",
+      "no-root",
+      "smart-tv",
+      "tv-launcher"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-24T03:16:22Z",
+    "updated_at": "2026-10-27T04:54:35Z",
+    "owner": {
+      "name": "dyascj",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80225316?v=4"
+    }
+  },
+  {
+    "name": "u123510/Pokemmo2Pro-Server",
+    "url": "https://github.com/u123510/Pokemmo2Pro-Server",
+    "description": "基于openmmo",
+    "stars": 43,
+    "forks": 21,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-08T02:42:35Z",
+    "updated_at": "2026-10-13T15:55:44Z",
+    "owner": {
+      "name": "u123510",
+      "avatar_url": "https://avatars.githubusercontent.com/u/106266254?v=4"
+    }
+  },
+  {
+    "name": "interli3/workbuddy-cloud-worker",
+    "url": "https://github.com/interli3/workbuddy-cloud-worker",
+    "description": "WorkBuddy 云端自动化 worker：每日签到 / 猫猫旅行循环 / 令牌自我续期 / 成长计划任务 —— 电脑关机也照跑。",
+    "stars": 41,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-16T17:24:48Z",
+    "updated_at": "2026-10-22T01:54:02Z",
+    "owner": {
+      "name": "interli3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/307427426?v=4"
+    }
+  },
+  {
+    "name": "Pixelgamer4k/VidUltra",
+    "url": "https://github.com/Pixelgamer4k/VidUltra",
+    "description": "RAW video camera for Android: GPU-developed RAW to 10-bit HEVC, gyro stabilization, film-like noise reduction, iPhone-style auto look and 14 log profiles. Beta.",
+    "stars": 40,
+    "forks": 1,
+    "language": "Java",
+    "topics": [
+      "android",
+      "camera",
+      "camera2",
+      "log-profile",
+      "raw-video",
+      "stabilization",
+      "video-recording"
+    ],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-24T16:18:32Z",
+    "updated_at": "2026-10-26T14:36:32Z",
+    "owner": {
+      "name": "Pixelgamer4k",
+      "avatar_url": "https://avatars.githubusercontent.com/u/139259340?v=4"
+    }
+  },
+  {
+    "name": "yueyezhufeng/ontoquery",
+    "url": "https://github.com/yueyezhufeng/ontoquery",
+    "description": "一个基于本体实现的智能问数平台",
+    "stars": 39,
+    "forks": 24,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-08T15:57:53Z",
+    "updated_at": "2026-10-14T05:54:06Z",
+    "owner": {
+      "name": "yueyezhufeng",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3379270?v=4"
+    }
+  },
+  {
+    "name": "rajupp/talkies",
+    "url": "https://github.com/rajupp/talkies",
+    "description": "A small, ad-free home screen for Android TV and Google TV",
+    "stars": 35,
+    "forks": 6,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-25T04:10:58Z",
+    "updated_at": "2026-10-26T19:02:23Z",
+    "owner": {
+      "name": "rajupp",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25338785?v=4"
+    }
+  },
+  {
+    "name": "tinulica/tv-home",
+    "url": "https://github.com/tinulica/tv-home",
+    "description": "An Apple TV-style home screen for TCL Google TVs: Liquid Glass, previews, Control Center, search, Cinema mode, weather notices",
+    "stars": 34,
+    "forks": 3,
+    "language": "Java",
+    "topics": [
+      "android-tv",
+      "apple-tv",
+      "google-tv",
+      "launcher",
+      "liquid-glass",
+      "tcl"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-21T20:42:21Z",
+    "updated_at": "2026-10-25T15:47:54Z",
+    "owner": {
+      "name": "tinulica",
+      "avatar_url": "https://avatars.githubusercontent.com/u/87174817?v=4"
+    }
+  },
+  {
+    "name": "ck-ys/SmartDock",
+    "url": "https://github.com/ck-ys/SmartDock",
+    "description": "SmartDock 是开源通用智能体（AI Agent）引擎与事件源用户画像引擎：支持多 agent 注册、ReAct 工具调用、工具 SPI、HITL 写操作确认、PII 脱敏与计费；内置 AI 助手应用与行为分析，Java 21 / Spring Boot 3.5 / Vue 3.5 / RuoYi，附完整后台基座。",
+    "stars": 34,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "agentscope",
+      "agentscope-java",
+      "ai-agent",
+      "ruoyi",
+      "ruoyi-ai",
+      "ruoyi-vue",
+      "ruoyi-vue-plus"
+    ],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-20T07:44:50Z",
+    "updated_at": "2026-10-26T05:42:12Z",
+    "owner": {
+      "name": "ck-ys",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54803455?v=4"
+    }
+  },
+  {
+    "name": "u123510/Pokemmo2Pro-Client",
+    "url": "https://github.com/u123510/Pokemmo2Pro-Client",
+    "description": "28887客户端",
+    "stars": 34,
+    "forks": 20,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-08T03:00:50Z",
+    "updated_at": "2026-10-13T15:56:12Z",
+    "owner": {
+      "name": "u123510",
+      "avatar_url": "https://avatars.githubusercontent.com/u/106266254?v=4"
+    }
+  },
+  {
+    "name": "Zuluglow/Resp-Minecraft-AIO-Soft",
+    "url": "https://github.com/Zuluglow/Resp-Minecraft-AIO-Soft",
+    "description": "Free/Best Software for Minecraft Yet",
+    "stars": 32,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "anti-hack",
+      "bedrock-client",
+      "dupe",
+      "killaura",
+      "liquidbounce",
+      "lunar-client",
+      "mclauncher",
+      "meteor-client-addons",
+      "meteorclient",
+      "minecraf-mod",
+      "minecraft-guides",
+      "minecraft-verity",
+      "nbt-hacks",
+      "obsidian-client",
+      "rusherhack",
+      "vape",
+      "vape-client",
+      "vape-launcher",
+      "vapelite",
+      "vaping"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-26T07:20:38Z",
+    "updated_at": "2026-10-26T13:09:50Z",
+    "owner": {
+      "name": "Zuluglow",
+      "avatar_url": "https://avatars.githubusercontent.com/u/341167471?v=4"
+    }
+  },
+  {
+    "name": "petrobot-admin/hume-launcher",
+    "url": "https://github.com/petrobot-admin/hume-launcher",
+    "description": "Hume Launcher — an Apple tvOS-style home screen for Android TV, with built-in Presentation (signage) mode. By Petrobot.",
+    "stars": 31,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-22T06:00:38Z",
+    "updated_at": "2026-10-27T04:29:38Z",
+    "owner": {
+      "name": "petrobot-admin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77525207?v=4"
+    }
+  },
+  {
+    "name": "TaunahiMacro/taunahi-macro",
+    "url": "https://github.com/TaunahiMacro/taunahi-macro",
+    "description": "Taunahi is an advanced Hypixel Skyblock macro designed for complete automation. Includes highly optimized utility mods for garden farming, slayers, fishing, and combat, all protected by an industry-leading anti-staff system.",
+    "stars": 31,
+    "forks": 11,
+    "language": "Java",
+    "topics": [
+      "anti-staff",
+      "automation",
+      "fabric",
+      "fabric-mod",
+      "farming-macro",
+      "fishing-macro",
+      "garden-farming",
+      "hypixel",
+      "hypixel-macro",
+      "hypixel-skyblock",
+      "hypixel-skyblock-macro",
+      "macro",
+      "minecraft",
+      "minecraft-macro",
+      "minecraft-mod",
+      "skyblock",
+      "skyblock-macro",
+      "slayer-macro",
+      "taunahi",
+      "utility-mod"
+    ],
+    "license": "GNU General Public License v2.0",
+    "created_at": "2026-10-26T21:11:12Z",
+    "updated_at": "2026-10-26T21:41:38Z",
+    "owner": {
+      "name": "TaunahiMacro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/348516478?v=4"
+    }
+  },
+  {
+    "name": "Stonewuu/agenteam",
+    "url": "https://github.com/Stonewuu/agenteam",
+    "description": "【群策】 - 开源企业级云端多智能体协作 OPC 平台，组建你的专属 AI 团队 - Java & AgentScope 2.0 |  [AgenTeam] Open-source, enterprise-grade OPC (One Person Company) platform for building collaborative AI teams – built on Java & AgentScope 2.0.",
+    "stars": 31,
+    "forks": 8,
+    "language": "Java",
+    "topics": [
+      "agent",
+      "agentscope",
+      "agentscope-java",
+      "ai",
+      "enterprise",
+      "enterprise-ai",
+      "java",
+      "spring-boot"
+    ],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-09T03:39:07Z",
+    "updated_at": "2026-10-15T03:26:02Z",
+    "owner": {
+      "name": "Stonewuu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25025423?v=4"
+    }
+  },
+  {
+    "name": "JayElDragon/luigis-mansion-android",
+    "url": "https://github.com/JayElDragon/luigis-mansion-android",
+    "description": "Luigis Mansion Android port made by MsBunnana & JayElDragon",
+    "stars": 29,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-23T23:17:25Z",
+    "updated_at": "2026-10-26T22:45:33Z",
+    "owner": {
+      "name": "JayElDragon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/288161697?v=4"
+    }
+  },
+  {
+    "name": "oliverjwroberts/cosy-home-tv",
+    "url": "https://github.com/oliverjwroberts/cosy-home-tv",
+    "description": "An Android TV home screen: a clock over a cosy valley that follows the real sunrise and sunset, with live weather.",
+    "stars": 29,
+    "forks": 8,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-20T07:04:49Z",
+    "updated_at": "2026-10-26T01:18:58Z",
+    "owner": {
+      "name": "oliverjwroberts",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47334342?v=4"
+    }
+  },
+  {
+    "name": "hyggex/scaffold-cloud",
+    "url": "https://github.com/hyggex/scaffold-cloud",
+    "description": "自用 java-cloud 极简框架",
+    "stars": 29,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-19T05:07:35Z",
+    "updated_at": "2026-10-24T13:30:37Z",
+    "owner": {
+      "name": "hyggex",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25274444?v=4"
+    }
+  },
+  {
+    "name": "StevenSteel7/OnePort",
+    "url": "https://github.com/StevenSteel7/OnePort",
+    "description": null,
+    "stars": 29,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-19T08:18:37Z",
+    "updated_at": "2026-10-24T22:23:24Z",
+    "owner": {
+      "name": "StevenSteel7",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45318331?v=4"
+    }
+  },
+  {
+    "name": "yudigaga/DouAi",
+    "url": "https://github.com/yudigaga/DouAi",
+    "description": "DouAi · 抖音增强模块，基于 libxposed API 102",
+    "stars": 29,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-12T05:49:13Z",
+    "updated_at": "2026-10-18T05:25:11Z",
+    "owner": {
+      "name": "yudigaga",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115128443?v=4"
+    }
+  },
+  {
+    "name": "aqmangge/glass-tv-home",
+    "url": "https://github.com/aqmangge/glass-tv-home",
+    "description": "Glass TV Launcher — Android TV launcher bergaya tvOS dengan waktu solat, cuaca, API indeks pencemaran & screensaver StandBy",
+    "stars": 28,
+    "forks": 18,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-23T03:21:31Z",
+    "updated_at": "2026-10-27T06:55:23Z",
+    "owner": {
+      "name": "aqmangge",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39516407?v=4"
+    }
+  },
+  {
+    "name": "ashafizullah/klikdash",
+    "url": "https://github.com/ashafizullah/klikdash",
+    "description": "KlikDash: lightweight launcher + offline Quran for Android car headunits (Android 7+)",
+    "stars": 28,
+    "forks": 11,
+    "language": "Java",
+    "topics": [
+      "android-auto",
+      "android-launcher",
+      "car-headunit",
+      "offline",
+      "prayer-times",
+      "quran"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-23T01:52:33Z",
+    "updated_at": "2026-10-27T06:56:02Z",
+    "owner": {
+      "name": "ashafizullah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29304713?v=4"
+    }
+  },
+  {
+    "name": "ZhaoGY-N/huawei-nfc-eink-android-app",
+    "url": "https://github.com/ZhaoGY-N/huawei-nfc-eink-android-app",
+    "description": null,
+    "stars": 28,
+    "forks": 14,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-17T11:17:27Z",
+    "updated_at": "2026-10-22T17:33:27Z",
+    "owner": {
+      "name": "ZhaoGY-N",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62810902?v=4"
+    }
+  },
+  {
+    "name": "ronitgupta138/FinFlow-Core",
+    "url": "https://github.com/ronitgupta138/FinFlow-Core",
+    "description": "⚡ Production-Grade Banking & Financial Aggregation REST Platform (Spring Boot 3.3, Java 17, Spring Security 6 JWT, PostgreSQL, Scheduled Market Ingestion).",
+    "stars": 28,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "backend",
+      "backend-architecture",
+      "banking-api",
+      "docker",
+      "financial-engine",
+      "fintech",
+      "java",
+      "java-17",
+      "jpql",
+      "junit5",
+      "jwt",
+      "jwt-authentication",
+      "microservices",
+      "postgresql",
+      "rest-api",
+      "scheduled-tasks",
+      "spring-boot",
+      "spring-boot-3",
+      "spring-security",
+      "spring-security-6"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-17T07:50:06Z",
+    "updated_at": "2026-10-22T17:40:42Z",
+    "owner": {
+      "name": "ronitgupta138",
+      "avatar_url": "https://avatars.githubusercontent.com/u/208290786?v=4"
+    }
+  },
+  {
+    "name": "steventa2024-lgtm/ZeroPulseTV",
+    "url": "https://github.com/steventa2024-lgtm/ZeroPulseTV",
+    "description": null,
+    "stars": 27,
+    "forks": 3,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-20T19:15:09Z",
+    "updated_at": "2026-10-25T13:42:35Z",
+    "owner": {
+      "name": "steventa2024-lgtm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/288522071?v=4"
+    }
+  },
+  {
+    "name": "ivantrj/firetv-glass-launcher",
+    "url": "https://github.com/ivantrj/firetv-glass-launcher",
+    "description": "Debloat your Fire TV Stick and replace Amazon's home screen with Glass, a small, fast launcher",
+    "stars": 27,
+    "forks": 7,
+    "language": "Java",
+    "topics": [
+      "android-tv",
+      "debloat",
+      "fire-tv",
+      "firestick",
+      "launcher"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-19T17:55:32Z",
+    "updated_at": "2026-10-25T00:38:23Z",
+    "owner": {
+      "name": "ivantrj",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11463485?v=4"
+    }
+  },
+  {
+    "name": "Nobodiiiii/Terraria-in-Minecraft",
+    "url": "https://github.com/Nobodiiiii/Terraria-in-Minecraft",
+    "description": "Brings real Terraria into Minecraft chests. 在我的世界的箱子中玩真实泰拉瑞亚。",
+    "stars": 27,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-15T16:17:19Z",
+    "updated_at": "2026-10-20T04:31:31Z",
+    "owner": {
+      "name": "Nobodiiiii",
+      "avatar_url": "https://avatars.githubusercontent.com/u/204067482?v=4"
+    }
+  },
+  {
+    "name": "ghorbelhamdi/buddy-android",
+    "url": "https://github.com/ghorbelhamdi/buddy-android",
+    "description": "A floating chat bubble that lets Claude Code, Codex or OpenCode use your Android phone. Runs inside the app on your own subscription or free models. No adb, no PC, no root.",
+    "stars": 27,
+    "forks": 1,
+    "language": "Java",
+    "topics": [
+      "accessibility",
+      "ai-agent",
+      "android",
+      "claude",
+      "claude-code",
+      "codex",
+      "computer-use",
+      "mcp",
+      "mcp-server",
+      "opencode",
+      "phone-automation"
+    ],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-07T12:12:13Z",
+    "updated_at": "2026-10-13T08:19:57Z",
+    "owner": {
+      "name": "ghorbelhamdi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33120058?v=4"
+    }
+  },
+  {
+    "name": "benbaobaoshigemi/OmniCam-Muse",
+    "url": "https://github.com/benbaobaoshigemi/OmniCam-Muse",
+    "description": "OmniCam Muse: KernelSU module and settings app for Find X9 Ultra (PMA110)",
+    "stars": 26,
+    "forks": 8,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-16T13:08:58Z",
+    "updated_at": "2026-10-21T18:59:54Z",
+    "owner": {
+      "name": "benbaobaoshigemi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/202927150?v=4"
+    }
+  },
+  {
+    "name": "majnioui/CleanXiaomiTV",
+    "url": "https://github.com/majnioui/CleanXiaomiTV",
+    "description": "A clean, ad-free home screen for Xiaomi / Google TV: photo of the day with liquid glass, prayer times and a countdown, now playing, weather, and a screensaver with prayer times and athkar you can switch off. Debloat included.",
+    "stars": 25,
+    "forks": 12,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-19T18:19:04Z",
+    "updated_at": "2026-10-24T20:43:53Z",
+    "owner": {
+      "name": "majnioui",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20343109?v=4"
+    }
+  },
+  {
+    "name": "agentthink/industrial-iogateway",
+    "url": "https://github.com/agentthink/industrial-iogateway",
+    "description": "面向工业物联网的多协议采集网关，27 种工业协议统一接入，采集到存储再上报一条闭环链路，单 jar 部署。",
+    "stars": 24,
+    "forks": 10,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-19T06:17:43Z",
+    "updated_at": "2026-10-24T05:23:23Z",
+    "owner": {
+      "name": "agentthink",
+      "avatar_url": "https://avatars.githubusercontent.com/u/253613245?v=4"
+    }
+  },
+  {
+    "name": "Dotoryy/OpenAstolfo",
+    "url": "https://github.com/Dotoryy/OpenAstolfo",
+    "description": "Astolfo, but free and opensource",
+    "stars": 22,
+    "forks": 10,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-21T07:08:01Z",
+    "updated_at": "2026-10-26T23:57:41Z",
+    "owner": {
+      "name": "Dotoryy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/220902805?v=4"
+    }
+  },
+  {
+    "name": "JiayuStudio/stepx-neo-lab",
+    "url": "https://github.com/JiayuStudio/stepx-neo-lab",
+    "description": "StepX Neo 研究所｜社区实测、兼容性研究与手机操作教程索引",
+    "stars": 22,
+    "forks": 4,
+    "language": "Java",
+    "topics": [
+      "chinese",
+      "research",
+      "stepx-neo",
+      "stepx-neo-research"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-18T05:54:20Z",
+    "updated_at": "2026-10-24T06:36:18Z",
+    "owner": {
+      "name": "JiayuStudio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/173533849?v=4"
+    }
+  },
+  {
+    "name": "zhiluo1/quickwater",
+    "url": "https://github.com/zhiluo1/quickwater",
+    "description": "一键取水 QuickWater v1.3 —— 基于胖乖生活逆向研究的个人校园直饮水客户端（非官方，仅供学习研究）",
+    "stars": 22,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-10T17:23:30Z",
+    "updated_at": "2026-10-13T23:09:53Z",
+    "owner": {
+      "name": "zhiluo1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229248749?v=4"
+    }
+  },
+  {
+    "name": "490720818/hero-kill-android",
+    "url": "https://github.com/490720818/hero-kill-android",
+    "description": "英雄杀社区服的非官方安卓移植版本",
+    "stars": 21,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-25T11:34:58Z",
+    "updated_at": "2026-10-25T15:29:17Z",
+    "owner": {
+      "name": "490720818",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33067490?v=4"
+    }
+  },
+  {
+    "name": "chengyc17/armeria-grpc",
+    "url": "https://github.com/chengyc17/armeria-grpc",
+    "description": "一个好用的rpc框架",
+    "stars": 21,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-22T14:23:15Z",
+    "updated_at": "2026-10-24T03:54:41Z",
+    "owner": {
+      "name": "chengyc17",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19732129?v=4"
+    }
+  },
+  {
+    "name": "destradess/tv-home-universal",
+    "url": "https://github.com/destradess/tv-home-universal",
+    "description": "A minimal Android TV & Google TV launcher with a liquid glass UI, customizable widgets, animated screensavers, and remote-friendly controls.",
+    "stars": 21,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-22T15:47:52Z",
+    "updated_at": "2026-10-26T14:00:12Z",
+    "owner": {
+      "name": "destradess",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37511192?v=4"
+    }
+  },
+  {
+    "name": "yan-mc/minecraft-mod-dev",
+    "url": "https://github.com/yan-mc/minecraft-mod-dev",
+    "description": "DeepSeek Harness plugin + Minecraft 1.20.1 Forge probe for agent-driven mod development, in-game testing and YAML test cards.",
+    "stars": 21,
+    "forks": 2,
+    "language": "Java",
+    "topics": [
+      "ai-agents",
+      "deepseek-harness",
+      "dsh",
+      "forge",
+      "game-testing",
+      "java17",
+      "minecraft",
+      "minecraft-forge",
+      "mixin",
+      "modding",
+      "windows"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-17T17:01:01Z",
+    "updated_at": "2026-10-23T05:59:51Z",
+    "owner": {
+      "name": "yan-mc",
+      "avatar_url": "https://avatars.githubusercontent.com/u/183068810?v=4"
+    }
+  },
+  {
+    "name": "LazyBonesLZY/rkp-v1-oracle",
+    "url": "https://github.com/LazyBonesLZY/rkp-v1-oracle",
+    "description": "On-device Google keybox provisioner for V1-only Qualcomm KeyMint firmware (PureSoft HBK=0 signing oracle)",
+    "stars": 21,
+    "forks": 16,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-17T03:29:58Z",
+    "updated_at": "2026-10-22T05:08:43Z",
+    "owner": {
+      "name": "LazyBonesLZY",
+      "avatar_url": "https://avatars.githubusercontent.com/u/252741731?v=4"
+    }
+  },
+  {
+    "name": "Skid-Technology/OpenSlinky",
+    "url": "https://github.com/Skid-Technology/OpenSlinky",
+    "description": "not $14,99 anymore ",
+    "stars": 21,
+    "forks": 8,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-15T03:14:40Z",
+    "updated_at": "2026-10-21T01:56:22Z",
+    "owner": {
+      "name": "Skid-Technology",
+      "avatar_url": "https://avatars.githubusercontent.com/u/342030458?v=4"
+    }
+  },
+  {
+    "name": "daduncs/system",
+    "url": "https://github.com/daduncs/system",
+    "description": "1.21.11, Crystalpvp focused, works on all advanced modern proprietary anticheat solutions",
+    "stars": 21,
+    "forks": 3,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-11T10:50:18Z",
+    "updated_at": "2026-10-16T18:03:01Z",
+    "owner": {
+      "name": "daduncs",
+      "avatar_url": "https://avatars.githubusercontent.com/u/194678632?v=4"
+    }
+  },
+  {
+    "name": "davamudev/filebot-pro",
+    "url": "https://github.com/davamudev/filebot-pro",
+    "description": "Organize and rename your movies, TV shows and anime with a modern, animated interface.",
+    "stars": 21,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-11T19:55:40Z",
+    "updated_at": "2026-10-17T03:49:15Z",
+    "owner": {
+      "name": "davamudev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75913048?v=4"
+    }
+  },
+  {
+    "name": "fuzhengwei/ToyAgent",
+    "url": "https://github.com/fuzhengwei/ToyAgent",
+    "description": "用最简单的方式，讲清楚智能体实现 —— 一个接口类，就是一个智能体的最小 MVP。",
+    "stars": 21,
+    "forks": 2,
+    "language": "Java",
+    "topics": [
+      "agent",
+      "dsh",
+      "google-adk",
+      "spring-ai"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-08T11:40:00Z",
+    "updated_at": "2026-10-14T06:25:05Z",
+    "owner": {
+      "name": "fuzhengwei",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3761578?v=4"
+    }
+  },
+  {
+    "name": "puchito22/steamcraft-multiplayer",
+    "url": "https://github.com/puchito22/steamcraft-multiplayer",
+    "description": "Minecraft LAN over Steam is a mod designed to simplify multiplayer gaming without the need for external server hosting or third-party VPN tools like Hamachi or Radmin.",
+    "stars": 20,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-24T18:00:10Z",
+    "updated_at": "2026-10-26T12:00:40Z",
+    "owner": {
+      "name": "puchito22",
+      "avatar_url": "https://avatars.githubusercontent.com/u/347497746?v=4"
+    }
+  },
+  {
+    "name": "glidiandev/kido",
+    "url": "https://github.com/glidiandev/kido",
+    "description": "起動 KIDŌ: a command-center home screen for Android TV. No ads, no internet access.",
+    "stars": 20,
+    "forks": 1,
+    "language": "Java",
+    "topics": [
+      "android",
+      "android-tv",
+      "android-tv-home",
+      "android-tv-launcher",
+      "anime",
+      "home-screen",
+      "hud",
+      "launcher",
+      "sci-fi"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-20T06:10:16Z",
+    "updated_at": "2026-10-26T00:26:48Z",
+    "owner": {
+      "name": "glidiandev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/327322993?v=4"
+    }
+  },
+  {
+    "name": "SupexVoid/DOVideo-AI",
+    "url": "https://github.com/SupexVoid/DOVideo-AI",
+    "description": "Video content understanding and creation workspace.",
+    "stars": 19,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-16T10:13:28Z",
+    "updated_at": "2026-10-22T05:10:31Z",
+    "owner": {
+      "name": "SupexVoid",
+      "avatar_url": "https://avatars.githubusercontent.com/u/251008637?v=4"
+    }
+  },
+  {
+    "name": "w1lli4m666-droid/Simple-TV-Box",
+    "url": "https://github.com/w1lli4m666-droid/Simple-TV-Box",
+    "description": "Simple TV Box for android TV",
+    "stars": 18,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-13T05:08:09Z",
+    "updated_at": "2026-10-19T06:58:50Z",
+    "owner": {
+      "name": "w1lli4m666-droid",
+      "avatar_url": "https://avatars.githubusercontent.com/u/268493782?v=4"
+    }
+  },
+  {
+    "name": "commit-regrets/morphe-youtube-vr-patches",
+    "url": "https://github.com/commit-regrets/morphe-youtube-vr-patches",
+    "description": "Patches for YouTube VR (Meta Quest / Horizon OS), for use with Morphe",
+    "stars": 18,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-11T11:34:59Z",
+    "updated_at": "2026-10-16T00:49:20Z",
+    "owner": {
+      "name": "commit-regrets",
+      "avatar_url": "https://avatars.githubusercontent.com/u/292802799?v=4"
+    }
+  },
+  {
+    "name": "XaViewDnK/MinecraftJ2ME",
+    "url": "https://github.com/XaViewDnK/MinecraftJ2ME",
+    "description": "Jarona",
+    "stars": 18,
+    "forks": 2,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-10T19:09:38Z",
+    "updated_at": "2026-10-16T00:05:52Z",
+    "owner": {
+      "name": "XaViewDnK",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79099247?v=4"
+    }
+  },
+  {
+    "name": "luo11creator/deepfake_fight",
+    "url": "https://github.com/luo11creator/deepfake_fight",
+    "description": "近年来，以深度伪造（Deepfake）为代表的生成式人工智能技术进入爆发式增长阶段。在人脸方面，基于生成对抗网络（GAN）、自编码器与扩散模型（Diffusion）的换脸、人脸重建、人脸编辑技术已经能够生成肉眼难以分辨的伪造图像与视频。为此，我们自研了 GuardFusion 多模态融合检测模型， 在模型结构上，我们首先通过投影层将视觉 1280 维、音频 32 维、文本 512 维的差异化特征，统一映射至 256 维公共特征空间， 同时创新引入瓶颈融合 Transformer 机制，摒弃传统全量跨模态注意力的高开销结构，通过少量可学习瓶颈 Token 完成跨模态信息交互，将计算复杂度从 O(N²) 降至 O(3·N·B)。在保留多模态融合能力的同时，大幅轻量化模型。",
+    "stars": 17,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-24T14:42:08Z",
+    "updated_at": "2026-10-26T23:39:10Z",
+    "owner": {
+      "name": "luo11creator",
+      "avatar_url": "https://avatars.githubusercontent.com/u/273973814?v=4"
+    }
+  },
+  {
+    "name": "Linus5373/XCheats",
+    "url": "https://github.com/Linus5373/XCheats",
+    "description": "Free, Public, Open SRC Cheats made by XCode ",
+    "stars": 17,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v2.0",
+    "created_at": "2026-10-25T02:44:18Z",
+    "updated_at": "2026-10-27T03:15:28Z",
+    "owner": {
+      "name": "Linus5373",
+      "avatar_url": "https://avatars.githubusercontent.com/u/252657325?v=4"
+    }
+  },
+  {
+    "name": "Daisy2048/RM2027-Engineering-Vision-MoveIt2",
+    "url": "https://github.com/Daisy2048/RM2027-Engineering-Vision-MoveIt2",
+    "description": null,
+    "stars": 17,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-18T09:02:30Z",
+    "updated_at": "2026-10-20T04:47:41Z",
+    "owner": {
+      "name": "Daisy2048",
+      "avatar_url": "https://avatars.githubusercontent.com/u/231252197?v=4"
+    }
+  },
+  {
+    "name": "hotpad100c/litematicapass",
+    "url": "https://github.com/hotpad100c/litematicapass",
+    "description": "Renders Litematica schematics into an independent render target so shader packs (Iris) no longer affect them.",
+    "stars": 17,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "Creative Commons Zero v1.0 Universal",
+    "created_at": "2026-10-12T05:30:37Z",
+    "updated_at": "2026-10-18T04:20:37Z",
+    "owner": {
+      "name": "hotpad100c",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46704388?v=4"
+    }
+  },
+  {
+    "name": "A-l-an/FocalFlow",
+    "url": "https://github.com/A-l-an/FocalFlow",
+    "description": "FocalFlow research prototype: Android accessibility client and Python AI backend for task-oriented mobile interaction.",
+    "stars": 16,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-12T19:07:17Z",
+    "updated_at": "2026-10-14T15:11:04Z",
+    "owner": {
+      "name": "A-l-an",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63406861?v=4"
+    }
+  },
+  {
+    "name": "Kanishka-K07/Leetcode_Problems",
+    "url": "https://github.com/Kanishka-K07/Leetcode_Problems",
+    "description": null,
+    "stars": 16,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-10T05:47:51Z",
+    "updated_at": "2026-10-14T15:55:09Z",
+    "owner": {
+      "name": "Kanishka-K07",
+      "avatar_url": "https://avatars.githubusercontent.com/u/222830003?v=4"
+    }
+  },
+  {
+    "name": "zopulus/coogle",
+    "url": "https://github.com/zopulus/coogle",
+    "description": "让国行版ColorOS更加Google，仅适配ColorOS17",
+    "stars": 16,
+    "forks": 1,
+    "language": "Java",
+    "topics": [
+      "coloros17",
+      "lsposed-module",
+      "oneplus",
+      "oppo",
+      "realme",
+      "root"
+    ],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-09T18:16:37Z",
+    "updated_at": "2026-10-14T17:02:47Z",
+    "owner": {
+      "name": "zopulus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/139482328?v=4"
+    }
+  },
+  {
+    "name": "239272273-dot/fuyouxuan",
+    "url": "https://github.com/239272273-dot/fuyouxuan",
+    "description": "企业内部福利抢购与员工社区平台：秒杀、多级缓存、RocketMQ 异步落单、Canal 缓存一致性与 Docker 一键部署",
+    "stars": 16,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-09T08:23:07Z",
+    "updated_at": "2026-10-15T05:53:53Z",
+    "owner": {
+      "name": "239272273-dot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/273298875?v=4"
+    }
+  },
+  {
+    "name": "AgentVis-OS/aiphone_assistant",
+    "url": "https://github.com/AgentVis-OS/aiphone_assistant",
+    "description": null,
+    "stars": 16,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-08T21:36:21Z",
+    "updated_at": "2026-10-14T04:01:36Z",
+    "owner": {
+      "name": "AgentVis-OS",
+      "avatar_url": "https://avatars.githubusercontent.com/u/341031037?v=4"
+    }
+  },
+  {
+    "name": "1437649480/yuepaoying",
+    "url": "https://github.com/1437649480/yuepaoying",
+    "description": null,
+    "stars": 15,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-11T13:12:30Z",
+    "updated_at": "2026-10-15T10:49:11Z",
+    "owner": {
+      "name": "1437649480",
+      "avatar_url": "https://avatars.githubusercontent.com/u/147960744?v=4"
+    }
+  },
+  {
+    "name": "LazarC11/TheCarLauncher",
+    "url": "https://github.com/LazarC11/TheCarLauncher",
+    "description": null,
+    "stars": 15,
+    "forks": 3,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-09T11:52:41Z",
+    "updated_at": "2026-10-14T14:37:05Z",
+    "owner": {
+      "name": "LazarC11",
+      "avatar_url": "https://avatars.githubusercontent.com/u/111283959?v=4"
+    }
+  },
+  {
+    "name": "xandermodsstuff-dot/ultrakill-minecraft",
+    "url": "https://github.com/xandermodsstuff-dot/ultrakill-minecraft",
+    "description": "Play Minecraft as V1: ULTRAKILL's movement, weapons and HUD in a Minecraft world (Fabric mod + BepInEx plugin)",
+    "stars": 15,
+    "forks": 0,
+    "language": "Java",
+    "topics": [
+      "bepinex",
+      "fabric-mod",
+      "minecraft",
+      "minecraft-mod",
+      "ultrakill"
+    ],
+    "license": "Other",
+    "created_at": "2026-10-09T13:15:38Z",
+    "updated_at": "2026-10-14T19:03:24Z",
+    "owner": {
+      "name": "xandermodsstuff-dot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/340147915?v=4"
+    }
+  },
+  {
+    "name": "AllMySlop/pixel-watch-esim-writer",
+    "url": "https://github.com/AllMySlop/pixel-watch-esim-writer",
+    "description": "Provision any esim to your Pixel Watch via QR scanner",
+    "stars": 14,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-13T09:30:21Z",
+    "updated_at": "2026-10-17T22:16:01Z",
+    "owner": {
+      "name": "AllMySlop",
+      "avatar_url": "https://avatars.githubusercontent.com/u/327482546?v=4"
+    }
+  },
+  {
+    "name": "astoHu1/MiAIPlus",
+    "url": "https://github.com/astoHu1/MiAIPlus",
+    "description": "HyperOS LSPosed module extending 超级小爱 (MiAI) with on-device Phone Use tools and external model integration",
+    "stars": 13,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "Apache License 2.0",
+    "created_at": "2026-10-15T04:26:30Z",
+    "updated_at": "2026-10-19T15:17:44Z",
+    "owner": {
+      "name": "astoHu1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74781463?v=4"
+    }
+  },
+  {
+    "name": "DONGDERS/DirtyFalg-vr",
+    "url": "https://github.com/DONGDERS/DirtyFalg-vr",
+    "description": "DirtyFrag + W1c vr probe disarm (private fork)",
+    "stars": 13,
+    "forks": 3,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-13T15:02:49Z",
+    "updated_at": "2026-10-19T04:01:25Z",
+    "owner": {
+      "name": "DONGDERS",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97784508?v=4"
+    }
+  },
+  {
+    "name": "hoanghanhdevvn/GMS-Protect",
+    "url": "https://github.com/hoanghanhdevvn/GMS-Protect",
+    "description": "GMS & FCM Protection for Xiaomi HyperOS China ROM | Auto • No Root • No ADB • MiPush/Greezer Protection • Battery Friendly",
+    "stars": 13,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-12T04:59:27Z",
+    "updated_at": "2026-10-17T18:08:20Z",
+    "owner": {
+      "name": "hoanghanhdevvn",
+      "avatar_url": "https://avatars.githubusercontent.com/u/337716859?v=4"
+    }
+  },
+  {
+    "name": "gybeyond1/Veyra",
+    "url": "https://github.com/gybeyond1/Veyra",
+    "description": "Veyra - 短剧聚合播放器（Android APK + 自建后端 + Docker），支持红果/黄果多源、私密模式、代理绕行、手机/NAS 下载与合并",
+    "stars": 13,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-12T23:11:51Z",
+    "updated_at": "2026-10-18T05:26:47Z",
+    "owner": {
+      "name": "gybeyond1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/86888868?v=4"
+    }
+  },
+  {
+    "name": "DUzzL/fabrolia",
+    "url": "https://github.com/DUzzL/fabrolia",
+    "description": null,
+    "stars": 13,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-10T23:56:23Z",
+    "updated_at": "2026-10-14T07:23:01Z",
+    "owner": {
+      "name": "DUzzL",
+      "avatar_url": "https://avatars.githubusercontent.com/u/98381970?v=4"
+    }
+  },
+  {
+    "name": "3ako/ZakoOpt",
+    "url": "https://github.com/3ako/ZakoOpt",
+    "description": null,
+    "stars": 13,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU Lesser General Public License v3.0",
+    "created_at": "2026-10-09T09:23:43Z",
+    "updated_at": "2026-10-14T07:27:13Z",
+    "owner": {
+      "name": "3ako",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42819201?v=4"
+    }
+  },
+  {
+    "name": "ZENINXOP/Hexora",
+    "url": "https://github.com/ZENINXOP/Hexora",
+    "description": "Hexora — an open-source Android dual-pane file manager with ZIP/APK tools, a built-in editor, and customizable light and dark themes.",
+    "stars": 12,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-09T13:07:08Z",
+    "updated_at": "2026-10-15T04:57:21Z",
+    "owner": {
+      "name": "ZENINXOP",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79690163?v=4"
+    }
+  },
+  {
+    "name": "IzakyL/folkways",
+    "url": "https://github.com/IzakyL/folkways",
+    "description": "A NeoForge 1.21.1 colony mod built from plugins: a small core plans the settlers' work, and every trade (farming, herding, fishing, building, rail) is a plugin on its public API.",
+    "stars": 12,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-08T20:06:08Z",
+    "updated_at": "2026-10-14T02:57:24Z",
+    "owner": {
+      "name": "IzakyL",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60599315?v=4"
+    }
+  },
+  {
+    "name": "fentia/CoolapkReviver",
+    "url": "https://github.com/fentia/CoolapkReviver",
+    "description": "让旧版酷安通过服务端版本校验，修复酷安评论区接口异常",
+    "stars": 11,
+    "forks": 3,
+    "language": "Java",
+    "topics": [
+      "xposed-module"
+    ],
+    "license": "MIT License",
+    "created_at": "2026-10-18T12:37:34Z",
+    "updated_at": "2026-10-20T01:46:09Z",
+    "owner": {
+      "name": "fentia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68796826?v=4"
+    }
+  },
+  {
+    "name": "VictorHall6055/Tesla-CarWith-Box",
+    "url": "https://github.com/VictorHall6055/Tesla-CarWith-Box",
+    "description": "Tesla Browser Streaming Container for Xiaomi HyperOS CarWith",
+    "stars": 11,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-14T17:02:32Z",
+    "updated_at": "2026-10-19T04:17:09Z",
+    "owner": {
+      "name": "VictorHall6055",
+      "avatar_url": "https://avatars.githubusercontent.com/u/249115097?v=4"
+    }
+  },
+  {
+    "name": "resourcepack-ai/dialog-engine",
+    "url": "https://github.com/resourcepack-ai/dialog-engine",
+    "description": "A plugin for  Minecraft's own dialog screens, written in YAML: text boxes, dropdowns, sliders, buttons and an API.",
+    "stars": 11,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "GNU General Public License v3.0",
+    "created_at": "2026-10-11T04:21:14Z",
+    "updated_at": "2026-10-16T19:17:08Z",
+    "owner": {
+      "name": "resourcepack-ai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/298538581?v=4"
+    }
+  },
+  {
+    "name": "Open-Raven/RavenXD",
+    "url": "https://github.com/Open-Raven/RavenXD",
+    "description": "https://discord.gg/T5Cy6s2VQ6",
+    "stars": 11,
+    "forks": 1,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-11T23:25:02Z",
+    "updated_at": "2026-10-16T11:18:22Z",
+    "owner": {
+      "name": "Open-Raven",
+      "avatar_url": "https://avatars.githubusercontent.com/u/183440012?v=4"
+    }
+  },
+  {
+    "name": "martinwoodward/iphoto-frame-saver",
+    "url": "https://github.com/martinwoodward/iphoto-frame-saver",
+    "description": "An Android photo-frame screensaver for public iCloud shared albums",
+    "stars": 10,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "MIT License",
+    "created_at": "2026-10-16T21:51:52Z",
+    "updated_at": "2026-10-18T16:15:53Z",
+    "owner": {
+      "name": "martinwoodward",
+      "avatar_url": "https://avatars.githubusercontent.com/u/856858?v=4"
+    }
+  },
+  {
+    "name": "ebrahimpak/BizDiag",
+    "url": "https://github.com/ebrahimpak/BizDiag",
+    "description": "Intelligent Enterprise Architecture and Digital Strategy Automation using ArchiMate, jArchi, Java, GraalJS, and AI.",
+    "stars": 10,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "Other",
+    "created_at": "2026-10-15T15:01:47Z",
+    "updated_at": "2026-10-18T13:45:45Z",
+    "owner": {
+      "name": "ebrahimpak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/243972274?v=4"
+    }
+  },
+  {
+    "name": "Jan1k1/displaymotion",
+    "url": "https://github.com/Jan1k1/displaymotion",
+    "description": "Animate vanilla item, block and text displays on Paper 1.21.4 to 26.3. Models, NPCs, effects, Blockbench import. Packets only through PacketEvents, no resource pack, no mods, nothing on the main thread.",
+    "stars": 10,
+    "forks": 2,
+    "language": "Java",
+    "topics": [
+      "animation",
+      "animations",
+      "blockbench",
+      "bukkit",
+      "display-entities",
+      "item-display",
+      "java",
+      "java-api",
+      "java-library",
+      "minecraft",
+      "minecraft-api",
+      "minecraft-plugin",
+      "packetevents",
+      "paper",
+      "papermc",
+      "spigot",
+      "text-display"
+    ],
+    "license": "No license",
+    "created_at": "2026-10-13T14:54:04Z",
+    "updated_at": "2026-10-18T17:26:08Z",
+    "owner": {
+      "name": "Jan1k1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/205965768?v=4"
+    }
+  },
+  {
+    "name": "BanCN-Re/FatalityClickGui",
+    "url": "https://github.com/BanCN-Re/FatalityClickGui",
+    "description": "b",
+    "stars": 10,
+    "forks": 5,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-12T11:41:38Z",
+    "updated_at": "2026-10-16T03:50:58Z",
+    "owner": {
+      "name": "BanCN-Re",
+      "avatar_url": "https://avatars.githubusercontent.com/u/188570877?v=4"
+    }
+  },
+  {
+    "name": "Aresxue/java-debug-skill",
+    "url": "https://github.com/Aresxue/java-debug-skill",
+    "description": "A Java remote breakpoint debugging Skill for AI agents such as Claude Code. It attaches to a remote JVM with JDWP enabled. The AI plans and sets breakpoints, waits for hits, collects call stacks and local variables, evaluates expressions and single-steps. It then reports a root cause based only on runtime data it actually collected.",
+    "stars": 10,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "license": "No license",
+    "created_at": "2026-10-11T07:16:07Z",
+    "updated_at": "2026-10-14T19:34:39Z",
+    "owner": {
+      "name": "Aresxue",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22526463?v=4"
+    }
+  }
+]
